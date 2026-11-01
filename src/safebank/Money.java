@@ -18,7 +18,7 @@ public class Money {
 
     public void setValue(BigDecimal value){
         if(value == null) throw new InvalidMoneyException("Invalid Monetary Value");
-        if( value.compareTo(BigDecimal.ZERO) <= 0) throw new InvalidMoneyException("Money cannot be less than or equals Zero");
+        if( value.compareTo(BigDecimal.ZERO) < 0) throw new InvalidMoneyException("Money cannot be Negative");
         this.value = value;
     }
 

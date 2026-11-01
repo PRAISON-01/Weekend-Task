@@ -35,18 +35,7 @@ public class MoneyTest {
                 () -> money.setValue(BigDecimal.valueOf(-1))
         );
 
-        assertEquals("Money cannot be less than or equals Zero", exception.getMessage());
-
-
-    }
-    @Test
-    public void TestThat_zeroAmount_moneyIsNotValid(){
-        InvalidMoneyException exception = assertThrows(
-                InvalidMoneyException.class,
-                () -> money.setValue(BigDecimal.valueOf(0))
-        );
-
-        assertEquals("Money cannot be less than or equals Zero", exception.getMessage());
+        assertEquals("Money cannot be Negative", exception.getMessage());
 
 
     }
@@ -99,7 +88,7 @@ public class MoneyTest {
                 ()-> money.subtract(anotherMoney)
         );
 
-        assertEquals("Money cannot be less than or equals Zero", exception.getMessage());
+        assertEquals("Money cannot be Negative", exception.getMessage());
 
 
     }
