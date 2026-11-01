@@ -29,7 +29,7 @@ public class AccountNumberTest {
     @Test
     public void testThat_wrongAccountNumber_returnFalse() {
         String bankCode = "011";
-        String invalidAccountNumber = "0000014574"; // Ended with 4 instead of 9
+        String invalidAccountNumber = "0000014574";
 
         boolean isValid = AccountNumber.isValidAccountNumber(bankCode, invalidAccountNumber);
 
