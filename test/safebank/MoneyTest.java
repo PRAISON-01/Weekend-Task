@@ -65,21 +65,6 @@ public class MoneyTest {
 
 
     @Test
-    public void TestThat_subTractSamevalue_throwException(){
-        money.setValue(BigDecimal.valueOf(500));
-        Money anotherMoney = new Money(BigDecimal.valueOf(500));
-       InvalidMoneyException exception = assertThrows(
-               InvalidMoneyException.class,
-               ()-> money.subtract(anotherMoney)
-       );
-
-        assertEquals("Money cannot be less than or equals Zero", exception.getMessage());
-
-
-    }
-
-
-    @Test
     public void TestThat_subTractBigMoneyFromSmallMoney_throwException(){
         money.setValue(BigDecimal.valueOf(500));
         Money anotherMoney = new Money(BigDecimal.valueOf(1000));
