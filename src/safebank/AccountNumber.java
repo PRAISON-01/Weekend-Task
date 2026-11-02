@@ -1,12 +1,22 @@
 package safebank;
 
-public class AccountNumber {
+import lombok.Data;
+
+@Data
+public final class AccountNumber {
+    AccountNumber(String number){
+        this.accountNumber = number;
+    }
+
+    private final String accountNumber;
+
 
     private static final int[] NUMBERS =  {3, 7, 3, 3, 7, 3,  3, 7,  3, 3,  7, 3};
 
-    public static String generateAccountNumber(String bankCode, String serialNumber) {
+    public static AccountNumber generateAccountNumber(String bankCode, String serialNumber) {
         int checkDigit = calculateCheckDigit(bankCode, serialNumber);
-        return serialNumber + checkDigit;
+        String accountNumber =  serialNumber + checkDigit;
+        return new AccountNumber(accountNumber);
     }
 
     public static boolean isValidAccountNumber(String bankCode, String accountNumber) {

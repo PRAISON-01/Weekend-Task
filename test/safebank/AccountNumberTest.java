@@ -11,8 +11,8 @@ public class AccountNumberTest {
         String serialNumber = "000001457";
 
 
-        String generatedAccount = AccountNumber.generateAccountNumber(bankCode, serialNumber);
-        assertEquals("0000014579", generatedAccount);
+        AccountNumber generatedAccount = AccountNumber.generateAccountNumber(bankCode, serialNumber);
+        assertEquals("0000014579", generatedAccount.getAccountNumber());
     }
 
 
